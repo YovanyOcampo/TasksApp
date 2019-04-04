@@ -35,15 +35,24 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'agregar/:listaId',
+        children: [
+          {
+            path: '',
+            loadChildren: '../agregar/agregar.module#AgregarPageModule'
+          }
+        ]
+      },
+      {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/tab2',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/tab2',
     pathMatch: 'full'
   }
 ];
